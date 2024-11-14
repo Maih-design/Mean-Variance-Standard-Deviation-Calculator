@@ -3,14 +3,14 @@ import numpy as np
 def calculate(list):
     if len(list) != 9:
         raise ValueError( "List must contain nine numbers.")
-    m = np.array(input).reshape(3,3)
+    m = np.array(list).reshape(3,3)
 
     calculations = {
-        'mean': [m.mean(axis=0), m.mean(axis=1), m.mean()],
-        'variance': [m.var(axis=0), m.var(axis=1), m.var()],
-        'standard deviation': [m.std(axis=0), m.std(axis=1), m.std()],
-        'max': [m.max(axis=0), m.max(axis=1), m.max()],
-        'min': [m.min(axis=0), m.min(axis=1), m.min()],
-        'sum': [m.sum(axis=0), m.sum(axis=1), m.sum()]
+        'mean': [m.mean(axis=0).tolist(), m.mean(axis=1).tolist(), m.mean()],
+        'variance': [m.var(axis=0).tolist(), m.var(axis=1).tolist(), m.var()],
+        'standard deviation': [m.std(axis=0).tolist(), m.std(axis=1).tolist(), m.std()],
+        'max': [m.max(axis=0).tolist(), m.max(axis=1).tolist(), m.max()],
+        'min': [m.min(axis=0).tolist(), m.min(axis=1).tolist(), m.min()],
+        'sum': [m.sum(axis=0).tolist(), m.sum(axis=1).tolist(), m.sum()]
   }
     return calculations
